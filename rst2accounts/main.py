@@ -16,8 +16,8 @@ def center_align(cell, val, offset=0):
     cell_size = len(cell)
     s_val = str(val)
     val_size = len(s_val)
-    # -2 due to the point and one digit
-    point_index = -2 if '.' not in s_val else s_val.index('.')
+
+    point_index = val_size - 1 if '.' not in s_val else s_val.index('.')
     rval = s_val.rjust(cell_size // 2 + val_size - point_index + offset)
 
     return rval.ljust(cell_size)
