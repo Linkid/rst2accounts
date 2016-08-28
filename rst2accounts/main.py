@@ -61,12 +61,12 @@ def accounts(cpt_table):
                     # totals
                     total_debit = round(total_debit + debit, 2)
                     total_credit = round(total_credit + credit, 2)
-                    #total = round(total + credit - debit, 2)
+                    # total = round(total + credit - debit, 2)
                     total = round(total_credit - total_debit, 2)
                     line_split[5] = center_align(header[5], total, 1)
             cpt_final.append(COL_SEPARATOR.join(line_split))
         else:
-            line_split = line.split(LINE_SEP_SEP)
+            # line_split = line.split(LINE_SEP_SEP)
             cpt_final.append(line)
 
     return cpt_final
