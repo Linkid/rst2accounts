@@ -42,7 +42,7 @@ def main(cpt_table):
             if is_header:
                 # header
                 header = line_split
-                a = [len(k) for k in header]
+                # a = [len(k) for k in header]
                 is_header = False
             else:
                 if CELL_NULL in line_split[1]:
