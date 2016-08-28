@@ -8,7 +8,11 @@ LINE_SEP_SEP = '+'
 CELL_NULL = '/'
 
 
-def center_float(cell, val, offset=0):
+def center_align(cell, val, offset=0):
+    """
+    Center the val into the cell and keep the alignment
+    Different of str.center due to the alignment
+    """
     cell_size = len(cell)
     s_val = str(val)
     val_size = len(s_val)
@@ -43,9 +47,9 @@ def main(cpt_table):
             else:
                 if CELL_NULL in line_split[1]:
                     # last line
-                    line_split[3] = center_float(header[3], total_debit)
-                    line_split[4] = center_float(header[4], total_credit)
-                    line_split[5] = center_float(header[5], total, 1)
+                    line_split[3] = center_align(header[3], total_debit)
+                    line_split[4] = center_align(header[4], total_credit)
+                    line_split[5] = center_align(header[5], total, 1)
                 else:
                     # operations
                     debit_ = line_split[3].strip()
@@ -57,7 +61,7 @@ def main(cpt_table):
                     total_credit = round(total_credit + credit, 2)
                     #total = round(total + credit - debit, 2)
                     total = round(total_credit - total_debit, 2)
-                    line_split[5] = center_float(header[5], total, 1)
+                    line_split[5] = center_align(header[5], total, 1)
             cpt_final.append(COL_SEPARATOR.join(line_split))
         else:
             line_split = line.split(LINE_SEP_SEP)
