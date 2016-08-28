@@ -1,6 +1,8 @@
 *.sw?
 *.py?
 
+.tox
+
 *.egg-info
 build
 dist
