@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import argparse
+
 
 # ReST constants
 COL_SEPARATOR = '|'
@@ -24,7 +26,7 @@ def center_align(cell, val, offset=0):
     #return s_val.center(cell_size)
 
 
-def main(cpt_table):
+def accounts(cpt_table):
     # init vars
     is_header = True
     header = []
@@ -68,3 +70,19 @@ def main(cpt_table):
             cpt_final.append(line)
 
     return cpt_final
+
+
+def main():
+    # create the parser
+    parser = parser = argparse.ArgumentParser()
+    parser.add_argument('cpt_file', type=str, default='',
+            help="accounts file (in ReST format)")
+    args = parser.parse_args()
+
+    # read the file
+    with open(args.cpt_file) as rst_file:
+        rst_lines = "".join(rst_file.readlines())
+
+    # do the main stuff (accounting)
+    cpt_final = accounts(rst_lines)
+    print("\n".join(cpt_final))
