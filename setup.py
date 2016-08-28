@@ -26,4 +26,9 @@ setup(
         "Topic :: Office/Business :: Financial :: Accounting",
         "Topic :: Office/Business :: Financial :: Spreadsheet",
     ],
+    entry_points={
+        'console_scripts': [
+            'rst2accounts=rst2accounts.main:main',
+        ],
+    },
 )
