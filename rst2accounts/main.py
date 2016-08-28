@@ -52,6 +52,11 @@ def accounts(cpt_table):
                     line_split[3] = center_align(header[3], total_debit)
                     line_split[4] = center_align(header[4], total_credit)
                     line_split[5] = center_align(header[5], total, 1)
+                    # new header: restart all counts
+                    is_header = True
+                    total = 0
+                    total_debit = 0
+                    total_credit = 0
                 else:
                     # operations
                     debit_ = line_split[3].strip()
