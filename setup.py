@@ -7,7 +7,7 @@ from setuptools import setup
 
 setup(
     name='rst2accounts',
-    version='0.1',
+    version='0.2',
     description='Complete your accounts in ReST',
     long_description=open('README.rst').read(),
     author=u'François Magimel',
