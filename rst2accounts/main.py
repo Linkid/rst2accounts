@@ -9,14 +9,11 @@ CELL_NULL = '/'
 
 
 def center_float(cell, val, offset=0):
-    print(cell, len(cell))
-    print(val, len(str(val)))
     cell_size = len(cell)
     s_val = str(val)
     val_size = len(s_val)
     # -2 due to the point and one digit
     point_index = -2 if '.' not in s_val else s_val.index('.')
-    print(point_index)
     rval = s_val.rjust(cell_size // 2 + val_size - point_index + offset)
 
     return rval.ljust(cell_size)
@@ -42,7 +39,6 @@ def main(cpt_table):
                 # header
                 header = line_split
                 a = [len(k) for k in header]
-                print(a)
                 is_header = False
             else:
                 if CELL_NULL in line_split[1]:
