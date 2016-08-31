@@ -79,7 +79,7 @@ def accounts(cpt_table):
 
 def main():
     # create the parser
-    parser = parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser()
     parser.add_argument('cpt_file', type=str, default='',
             help="accounts file (in ReST format)")
     args = parser.parse_args()
