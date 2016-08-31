@@ -50,7 +50,7 @@ def accounts(cpt_table):
                 if CELL_NULL in line_split[1]:
                     # last line
                     line_split[3] = center_align(header[3], total_debit)
-                    line_split[4] = center_align(header[4], total_credit)
+                    line_split[4] = center_align(header[4], total_credit, 1)
                     line_split[5] = center_align(header[5], total, 1)
                     # new header: restart all counts
                     is_header = True
