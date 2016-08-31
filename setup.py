@@ -7,7 +7,7 @@ from setuptools import setup
 
 setup(
     name='rst2accounts',
-    version='0.2',
+    version='1.0.0',
     description='Calculate totals per operations in your ReST table accounts.',
     long_description=open('README.rst').read(),
     author=u'François Magimel',
