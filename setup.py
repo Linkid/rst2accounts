@@ -8,12 +8,13 @@ from setuptools import setup
 setup(
     name='rst2accounts',
     version='0.2',
-    description='Complete your accounts in ReST',
+    description='Calculate totals per operations in your ReST table accounts.',
     long_description=open('README.rst').read(),
     author=u'François Magimel',
+    author_email='francois.magimel@perdu.fr',
     url='https://github.com/Linkid/rst2accounts',
     license='BSD',
-    packages=find_packages(),
+    packages=find_packages(exclude=['tests']),
     classifiers=[
         "Environment :: Console",
         "License :: OSI Approved :: BSD License",
